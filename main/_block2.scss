@@ -1,0 +1,31 @@
+.block2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 30px;
+    padding: 30px;
+    background-color: #88b5bf;
+
+    @include laptop {
+        column-gap: 7.9%;
+    }
+
+    @include tablet {
+        column-gap: 6%;
+    }
+
+    @include mobile {
+        padding: 15px;
+        column-gap: 4%;
+    }
+
+    &__block {
+        height: 199px;
+        width: 255px;
+        background-color: #0d89b0;
+
+        @include laptop {
+            max-height: 13.52vw;
+            max-width: 17.32vw;
+        }
+    }
+}

@@ -1,0 +1,122 @@
+.header {
+    min-height: 100px;
+    background-color: #7faff6;
+    padding: 30.5px 30px;
+    margin-bottom: 15px;
+    justify-content: left;
+    align-items: center;
+
+    &__dropdown {
+        display: inline-block;
+        position: relative;
+
+        &:hover &-menu,
+        &:hover &-menu_close {
+            display: block;
+        }
+
+        &:active &-menu,
+        &:active &-menu_close {
+            display: block;
+        }
+
+        &-button {
+            position: relative;
+            width: 206px;
+            height: 39px;
+            border-radius: 5px;
+            padding: 8px 15px;
+            justify-content: center;
+            align-items: center;
+            background-color: #a5c7f9;
+            font-size: 20px;
+            line-height: 23px;
+            color: #fff;
+
+            &:hover {
+                background-color: #678abe;
+            }
+
+            &:active {
+                background-color: #0d89b0;
+            }
+
+            @include mobile {
+                width: 155px;
+                height: 30px;
+                padding: 8px 8px;
+                font-size: 15px;
+                line-height: 17px;
+            }
+        }
+
+        &-menu {
+            position: absolute;
+            top: 39px;
+            display: none;
+            z-index: 5;
+            width: 400px;
+            height: 400px;
+            padding: 169px 116px;
+            background-color: #fff;
+            font-size: 53px;
+            line-height: 62px;
+            text-align: center;
+
+            & a {
+                display: block;
+                color: #000;
+            }
+
+            @include mobile {
+                width: 200px;
+                height: 200px;
+                top: 30px;
+                font-size: 25px;
+                line-height: 29px;
+                padding: 85px 58px;
+            }
+
+            &_close {
+                display: none;
+                width: 43px;
+                height: 39px;
+                background-color: #7faff6;
+                border-radius: 5px;
+                position: absolute;
+                top: 54px;
+                left: 342px;
+                font-size: 20px;
+                line-height: 23px;
+                cursor: pointer;
+                z-index: 6;
+
+                &:hover {
+                    background-color: #a5c7f9;
+                }
+
+                &:active {
+                    background-color: #0d89b0;
+                    color: transparent;
+                    background-color: transparent;
+                    pointer-events: none;
+                }
+
+                &:active~.header__dropdown-menu {
+                    display: none;
+                    pointer-events: none;
+                }
+
+                @include mobile {
+                    width: 38px;
+                    height: 35px;
+                    font-size: 17px;
+                    line-height: 35px;
+                    top: 40px;
+                    left: 152px;
+                }
+
+            }
+        }
+    }
+}
